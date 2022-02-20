@@ -14,3 +14,7 @@ pip install 'fastapi[all]'
 uvicorn main:app --reload
 ```
 Open this URL in your browser: http://127.0.0.1:8000
+
+## Show document
+-> Swagger: http://127.0.0.1:8000/docs
+-> ReDoc: http://127.0.0.1:8000/redoc
