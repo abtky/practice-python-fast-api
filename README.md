@@ -8,3 +8,9 @@ https://fastapi.tiangolo.com/ja/tutorial/
 ```zsh
 pip install 'fastapi[all]'
 ```
+
+# Start app
+```zsh
+uvicorn main:app --reload
+```
+Open this URL in your browser: http://127.0.0.1:8000
