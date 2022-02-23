@@ -21,9 +21,8 @@ Open this URL in your browser: http://127.0.0.1:8000
 
 ## Execute test
 ```zsh
-pip install pytest
-pip install requests
+pip install pytest pytest-watch requests
 ```
 ```zsh
-pytest
+pytest-watch
 ```
