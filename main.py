@@ -3,7 +3,7 @@ from typing import Optional
 from pydantic import BaseModel
 from fastapi.testclient import TestClient
 
-from fake_db import fake_item_db
+from db.fake_db import fake_item_db
 
 app = FastAPI()
 
@@ -12,9 +12,13 @@ async def root():
     return {"message": "Hello World"}   
 
 @app.get("/items/")
+async def read_items():
+    return fake_item_db
+
+@app.get("/items/{item_id}")
 async def read_item(item_id: int):
     elm = filter(lambda x: x['id'] == item_id, fake_item_db)
-    return elm
+    return { "item_id": item_id }
 
 class Item(BaseModel):
     name: str

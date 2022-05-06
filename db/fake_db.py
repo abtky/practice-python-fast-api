@@ -12,3 +12,7 @@ fake_item_db = [
         "name": "Baz"
     },
 ]
+
+fake_users_db = []
+
+fake_tasks_db = []
