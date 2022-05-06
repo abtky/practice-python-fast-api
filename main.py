@@ -3,13 +3,17 @@ from typing import Optional
 from pydantic import BaseModel
 from fastapi.testclient import TestClient
 
-from db.fake_db import fake_item_db
+from db.fake_db import fake_item_db, fake_tasks_db
 
 app = FastAPI()
 
 @app.get("/")
 async def root():
     return {"message": "Hello World"}   
+
+@app.get("/tasks/")
+async def read_tasks():
+    return fake_tasks_db
 
 @app.get("/items/")
 async def read_items():

@@ -26,3 +26,6 @@ pip install pytest pytest-watch requests
 ```zsh
 pytest-watch
 ```
+
+## Reference
+https://terasolunaorg.github.io/guideline/5.5.1.RELEASE/ja/Tutorial/TutorialREST.html#api
