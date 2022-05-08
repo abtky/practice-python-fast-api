@@ -10,8 +10,29 @@ https://zenn.dev/sh0nk/books/537bb028709ab9
 pip install 'fastapi[all]'
 ```
 
+### Create the Docker image
 ```zsh
 docker-compose build
+```
+
+### Initialize the poetry
+```zsh
+docker-compose run \
+  --entrypoint "poetry init \
+    --name demo-app \
+    --dependency fastapi \
+    --dependency uvicorn[standard]" \
+  demo-app
+```
+
+### Install the Fast API
+```zsh
+docker-compose run --entrypoint "poetry install" demo-app
+```
+
+### Build image
+```zsh
+docker-compose build --no-cache
 ```
 
 # Start app
