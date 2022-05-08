@@ -3,6 +3,7 @@ Private lesson for learning the fast API of Python
 
 Reference: 
 https://fastapi.tiangolo.com/ja/tutorial/
+https://zenn.dev/sh0nk/books/537bb028709ab9
 
 # Setup
 ```zsh

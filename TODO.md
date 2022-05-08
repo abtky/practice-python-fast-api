@@ -1,0 +1,21 @@
+- [ ] pythonの日付型を調べる
+- [ ] "/tasks/"をIDやpriorityで絞り込みできるようにする
+- [ ] 絞り込みの振る舞いをテストするコードを書く
+- [ ] SQLiteでデータを保存する
+- [ ] "POST: /tasks/"を作る
+- [ ] validationの実装
+  - [ ] validationの設計
+  - [ ] validationのテストを書く
+  - [ ] validationの詳細を実装する
+- [ ] "PUT: /tasks/"を作る
+- [ ] "DELETE: /tasks/"を作る
+- [ ] Dockerが利用できるか検討する
+- [ ] Herokuが利用できるか検討する
+- [ ] CI/CDを導入する
+  - [ ] Github Actions調べてみる
+  - [ ] HerokuのCI/CD調べてみる
+- [ ] 認証機能を作る
+  - [ ] ID/PWでの認証
+  - [ ] PWの保存方法について調べてみる
+  - [ ] JWTについて調べてみる
+  - [ ] OAuthについて調べてみる
