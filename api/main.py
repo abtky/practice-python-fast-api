@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Query
 from typing import Optional
 from pydantic import BaseModel
-from fastapi.testclient import TestClient
 
 from db.fake_db import fake_item_db, fake_tasks_db
 
