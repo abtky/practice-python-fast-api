@@ -10,6 +10,10 @@ https://zenn.dev/sh0nk/books/537bb028709ab9
 pip install 'fastapi[all]'
 ```
 
+```zsh
+docker-compose build
+```
+
 # Start app
 ```zsh
 uvicorn main:app --reload
