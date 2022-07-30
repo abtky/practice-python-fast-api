@@ -11,9 +11,18 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}   
 
-@app.get("/tasks/")
+class Task(BaseModel):
+    id: int
+    label: str
+    
+
+@app.get("/task/")
 async def read_tasks():
     return fake_tasks_db
+
+@app.post("/task/")
+async def add_task(label: str):
+    return {"message": "success"}
 
 @app.get("/items/")
 async def read_items():
