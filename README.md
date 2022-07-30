@@ -7,7 +7,7 @@ https://zenn.dev/sh0nk/books/537bb028709ab9
 
 # Setup
 ```zsh
-pip install 'fastapi[all]'
+pip install 'fastapi[all]' 'sqlalchemy'
 ```
 
 ### Create the Docker image
@@ -21,6 +21,7 @@ docker-compose run \
   --entrypoint "poetry init \
     --name demo-app \
     --dependency fastapi \
+    --dependency sqlalchemy \
     --dependency uvicorn[standard]" \
   demo-app
 ```

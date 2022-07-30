@@ -1,11 +1,23 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Depends, Query
 from typing import Optional
 from pydantic import BaseModel
 from fastapi.testclient import TestClient
 
 from db.fake_db import fake_item_db, fake_tasks_db
+from sqlalchemy.orm import Session
+from db import crud, models
+from db.database import SessionLocal, engine
+
+models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+# Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 @app.get("/")
 async def root():
@@ -17,12 +29,12 @@ class Task(BaseModel):
     
 
 @app.get("/task/")
-async def read_tasks():
-    return fake_tasks_db
+async def read_tasks(db: Session = Depends(get_db)):
+    return crud.get_tasks(db, 30)
 
 @app.post("/task/")
-async def add_task(label: str):
-    return {"message": "success"}
+async def add_task(label: str, db:Session=Depends(get_db)):
+    return crud.create_task(db, label)
 
 @app.get("/items/")
 async def read_items():
