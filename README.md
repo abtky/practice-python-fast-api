@@ -39,11 +39,11 @@ docker-compose build --no-cache
 ```zsh
 uvicorn main:app --reload
 ```
-Open this URL in your browser: http://localhost:8000
+Open this URL in your browser: http://127.0.0.1:8000
 
 ## Show document
--> Swagger: http://localhost:8000/docs
--> ReDoc: http://localhost:8000/redoc
+-> Swagger: http://127.0.0.1:8000/docs
+-> ReDoc: http://127.0.0.1:8000/redoc
 
 ## Execute test
 ```zsh
