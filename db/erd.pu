@@ -1,0 +1,21 @@
+@startuml
+
+package "database" as ext <<Database>> {
+    entity users {
+        + id [PK]: int
+        ---
+        name: string
+    }
+    entity tasks {
+        + id [PK]: int
+        ---
+        user_id: int
+        label: string
+        priority: int
+        status: int
+        created_at: datetime
+        modified_at: datetime
+    }
+
+    users ||-d-o{ tasks
+}
