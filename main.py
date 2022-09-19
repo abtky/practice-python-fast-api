@@ -7,6 +7,7 @@ from db.fake_db import fake_item_db, fake_tasks_db
 from sqlalchemy.orm import Session
 from db import crud, models
 from db.database import SessionLocal, engine
+from api import task
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -19,22 +20,12 @@ def get_db():
     finally:
         db.close()
 
+
 @app.get("/")
 async def root():
     return {"message": "Hello World"}   
 
-class Task(BaseModel):
-    id: int
-    label: str
-    
-
-@app.get("/task/")
-async def read_tasks(db: Session = Depends(get_db)):
-    return crud.get_tasks(db, 30)
-
-@app.post("/task/")
-async def add_task(label: str, db:Session=Depends(get_db)):
-    return crud.create_task(db, label)
+app.include_router(task.router)    
 
 @app.get("/items/")
 async def read_items():
