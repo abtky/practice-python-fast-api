@@ -7,7 +7,7 @@ from db.fake_db import fake_item_db, fake_tasks_db
 from sqlalchemy.orm import Session
 from db import crud, models
 from db.database import SessionLocal, engine
-from api import task
+from app.api import task
 
 models.Base.metadata.create_all(bind=engine)
 
