@@ -56,3 +56,8 @@ pytest-watch
 
 ## Reference
 https://terasolunaorg.github.io/guideline/5.5.1.RELEASE/ja/Tutorial/TutorialREST.html#api
+
+## Others
+Plant UML
+https://plantuml.com/ja/
+https://qiita.com/couzie/items/9dedb834c5aff09ea7b2
