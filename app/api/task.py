@@ -15,5 +15,5 @@ async def read_tasks(db: Session = Depends(get_db)):
     return crud.get_tasks(db, 30)
 
 @router.post("/task")
-async def add_task(label: str, db:Session = Depends(get_db)):
-    return crud.create_task(db, label)
+async def add_task(task: Task, db:Session = Depends(get_db)):
+    return crud.create_task(db, task.label)
