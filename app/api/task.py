@@ -1,3 +1,4 @@
+from typing import Union
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
@@ -7,7 +8,7 @@ from app.utils import get_db
 router = APIRouter()
 
 class Task(BaseModel):
-    id: int
+    id: Union[int, None] = None
     label: str
 
 @router.get("/task")
