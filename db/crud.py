@@ -11,3 +11,9 @@ def create_task(db: Session, label: str):
     db.commit()
     db.refresh(task)
     return label
+
+def remove_task(db: Session, id: int):
+    target = db.query(models.Task).filter_by(id=id).first()
+    db.delete(target)
+    db.commit()
+    return id
