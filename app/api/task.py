@@ -20,4 +20,4 @@ async def add_task(task: Task, db:Session = Depends(get_db)):
 
 @router.delete("/task/{taskId}")
 async def remove_task(taskId: int, db:Session = Depends(get_db)):
-    return crud.remove_task(db, taskId)
+    return crud.delete_task(db, taskId)
