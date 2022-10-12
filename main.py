@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 
 from db.fake_db import fake_item_db, fake_tasks_db
 from sqlalchemy.orm import Session
-from db import crud, models
+from db import task, models
 from db.database import SessionLocal, engine
 from app.api import task
 
